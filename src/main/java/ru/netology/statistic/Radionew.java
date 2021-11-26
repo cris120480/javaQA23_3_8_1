@@ -19,14 +19,14 @@ public class Radionew {
     }
 
     public void increaseVolume() {
-        if (currentVolume <= 10)
+        if (currentVolume < 10)
             currentVolume = currentVolume + 1;
-        if (currentVolume > getMaxVolume())
+        if (currentVolume >= getMaxVolume())
             currentVolume = 10;
     }
 
+
     public void reduceVolume() {
-        if (currentVolume < 10)
             currentVolume = currentVolume - 1;
         if (currentVolume < getMinVolume())
             currentVolume = 0;
@@ -48,7 +48,7 @@ public class Radionew {
     }
 
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation < getMinVolume()) {
+        if (newCurrentStation < getMinStation()) {
             return;
         }
         if (newCurrentStation > getMaxStation()) {
@@ -58,17 +58,17 @@ public class Radionew {
     }
 
     public void increaseStation() {
-        if (currentStation <= 9)
+        if (currentStation < 9)
             currentStation = currentStation + 1;
-        if (currentStation > getMaxStation())
+        if (currentStation >= getMaxStation())
             currentStation = 0;
     }
 
     public void reduceStation() {
-        if (currentStation <= 9)
-            currentStation = currentStation - 1;
+        currentStation = currentStation - 1;
         if (currentStation < getMinStation())
             currentStation = 9;
+
     }
 
     public int getMaxStation() {
